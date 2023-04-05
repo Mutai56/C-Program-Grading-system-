@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+int main() {
+    int i;
+    int marks[7];
+    int totalMarks = 0;
+    float meanMarks = 0;
+
+    printf("Enter the marks of seven units:\n");
+    printf("BCIT 1210 Database Management Systems (Mr. Kiluu): ");
+    scanf("%d", &marks[0]);
+    printf("BENT 1207 Entrepreneurship Skills (Madam Rose): ");
+    scanf("%d", &marks[1]);
+    printf("BCSC 1234 DISCRETE MATHEMATICS (MR. KIIO): ");
+    scanf("%d", &marks[2]);
+    printf("DBMS 300 CALCULUS 1 (MR FRESTON): ");
+    scanf("%d", &marks[3]);
+    printf("BTTC 1423 PROGRAMMING (MR.SHEM): ");
+    scanf("%d", &marks[4]);
+    printf("BBMS COMPUTER NETWORKS (MADAM FLORENCE): ");
+    scanf("%d", &marks[5]);
+    printf("BDDC 1434 INTRODUCTION TO FARMING (MR. KIPRUTO): ");
+    scanf("%d", &marks[6]);
+
+    for (i = 0; i < 7; i++) {
+        if (marks[i] >= 80) {
+            printf("Unit %d: Grade A (Excellent)\n", i+1);
+        } else if (marks[i] >= 70) {
+            printf("Unit %d: Grade B (Very Good)\n", i+1);
+        } else if (marks[i] >= 60) {
+            printf("Unit %d: Grade C (Good)\n", i+1);
+        } else if (marks[i] >= 50) {
+            printf("Unit %d: Grade D (You can do better)\n", i+1);
+        } else if (marks[i] <= 40) {
+            printf("Unit %d: Grade E (Pull up your socks)\n", i+1);
+        }
+        totalMarks += marks[i];
+    }
+
+    meanMarks = (float)totalMarks / 7.0;
+    printf("Total Marks: %d\n", totalMarks);
+    printf("Mean Marks: %.2f\n", meanMarks);
+
+    if (meanMarks >= 80) {
+        printf("Grade: A (Excellent)\n");
+    } else if (meanMarks >= 70) {
+        printf("Grade: B (Very Good)\n");
+    } else if (meanMarks >= 60) {
+        printf("Grade: C (Good)\n");
+    } else if (meanMarks >= 50) {
+        printf("Grade: D (You can do better)\n");
+    } else {
+        printf("Grade: E (Repeat the semester)\n");
+    }
+
+    return 0;
+}
